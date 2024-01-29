@@ -27,32 +27,30 @@ const images = [
     alt: 'Zebras on Zebra',
   },
 ];
-// const list = document.querySelector(".gallery");
-
-// function renderImages(images){
-//   images.forEach(image => {
-//     list.insertAdjacentHTML(
-//       'beforeEnd',
-//       `<li>
-//   <img src="${image.url}" alt="${image.alt}"/>
-//     </li>`)
-//     })
-//   }
-//   renderImages(images)
-
 const list = document.querySelector(".gallery");
 
 function renderImages(images) {
+  const oneItem = document.createDocumentFragment();
+  
   images.forEach(image => {
     const listItem = document.createElement("li");
     const imgElement = document.createElement("img");
 
     imgElement.src = image.url;
     imgElement.alt = image.alt;
+    // Стилі для кращого візуально сприйняття
+    imgElement.style.width = "100px";
+    imgElement.style.height = "100%";
+    listItem.style.listStyleType = "none";
+    list.style.width = "380px"
+    list.style.display = "flex";
+    list.style.flexWrap = "wrap";
+    list.style.gap = "20px"
 
     listItem.appendChild(imgElement);
-    list.appendChild(listItem);
+    oneItem.appendChild(listItem);
   });
+  list.appendChild(oneItem);
 }
 
 renderImages(images);

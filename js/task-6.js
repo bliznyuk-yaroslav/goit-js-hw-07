@@ -9,6 +9,7 @@ const destroyButton = document.querySelector('[data-destroy]');
 const boxesContainer = document.querySelector('#boxes');
 
 function createBoxes(amount) {
+  destroyBoxes();
   const baseSize = 30;
   const boxes = [];
 
@@ -35,6 +36,7 @@ createButton.addEventListener('click', () => {
     createBoxes(amount);
     input.value = '';
   }
+  
 });
 
 destroyButton.addEventListener('click', destroyBoxes);
