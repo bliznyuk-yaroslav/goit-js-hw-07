@@ -17,6 +17,7 @@ else{
         email: emailValue,
     password: passwordValue, }
    console.log(result);
+   registerForm.reset();
 }
 
 

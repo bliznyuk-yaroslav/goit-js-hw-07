@@ -1,4 +1,3 @@
-const categories = document.querySelector("#categories");
 const itemList = document.querySelectorAll("li.item");
 console.log(`Number of categories:${itemList.length}`);
 itemList.forEach((itemList) =>{
